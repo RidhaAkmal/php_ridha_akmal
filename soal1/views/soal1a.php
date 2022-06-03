@@ -1,4 +1,9 @@
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Home</h1>
+    <form action="/soal1/soal1b" method="post">
     <div>
         <label for="name">Inputkan Jumlah baris:</label>
         <input type="text" name="baris" placeholder="Baris" />
@@ -13,3 +18,6 @@
         <button type="submit">Submit</button>
     </div>
 </form>
+
+</body>
+</html>

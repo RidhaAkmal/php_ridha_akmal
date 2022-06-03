@@ -1,17 +1,23 @@
 <?php
+    // Define your location project directory in htdocs (EX THE FULL PATH: C:\xampp\htdocs\soal1)
+    $project_location = "/soal1";
+    $me = $project_location;
 
-require __DIR__ . '/app/header.php';
+    // For get URL PATH
+    $request = $_SERVER['REQUEST_URI'];
 
-$request_method = strtoupper($_SERVER['REQUEST_METHOD']);
-
-if ($request_method === 'GET') {
-	require __DIR__ . '/app/soal1a.php';
-} elseif ($request_method === 'POST') {
-	require __DIR__ .  '/app/soal1b.php';
-	if ($request_method === 'GET') {
-		require __DIR__ . '/app/soal1c.php';
-	}
-}
-//
-
-require __DIR__ .  '/app/footer.php';
+    switch ($request) {
+        case $me.'/' :
+            require "views/soal1a.php";
+            break;
+        case $me.'/soal1b' :
+            require "views/soal1b.php";
+            break;
+        case $me.'/soal1c' :
+            require "views/soal1c.php";
+            break;
+        default:
+            http_response_code(404);
+            echo "404";
+            break;
+    }

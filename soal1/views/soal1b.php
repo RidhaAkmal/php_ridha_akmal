@@ -1,28 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>tes</p>
 <?php
-
-//-----------------------------------------------------
-// WARNING: this doesn't include sanitization
-// and validation
-//-----------------------------------------------------
 
 if (isset($_POST['baris'], $_POST['kolom'])) {
 	$baris = htmlspecialchars($_POST['baris']);
 	$kolom = htmlspecialchars($_POST['kolom']);
 ?>
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+<form action="/soal1/soal1c" method="post">
 <?php
 	// tampilkan $baris dan $kolom
-    $data=0;
+    $key=0;
     $array=array();
     $values=array();
     for ($i=1;$i<=$baris;$i++){
         for ($j=1;$j<=$kolom;$j++){
             echo "$i.$j: ";
-            $data++;
-            array_push($values,"$data");
+            $key++;
+            array_push($values,"$key");
 ?>
 
-            <input type="text" name="$data" placeholder="<?php echo $data;?>"/>
+            <input type="text" name="$data" placeholder="<?php echo $key." (default value)";?>"/>
             
 <?php    
         array_push($array,"$i.$j");
@@ -38,8 +37,16 @@ if (isset($_POST['baris'], $_POST['kolom'])) {
 <br/>
 
 <?php  
+        $i=0;
         foreach ($array as $data){
             echo "$data :";
+            echo " $values[$i]";
             echo "<br/>";
+            $i++;
          }
 }
+?>
+</form>
+
+</body>
+</html>
