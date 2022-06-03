@@ -2,7 +2,7 @@
 # SOAL A nomer 1
 Menggunakan XAMPP
 <br/>Build with a simple routing
-<br/>Jika terdapat error pada routing bisa cek <form action="..." method="post">
+<br/>Jika terdapat error pada routing bisa cek >form action="..." method="post"
 <br/> $project_location = "/soal1"; atau sesuaikan dengan folder pada htdoc
 <br/>full pathku C:\xampp\htdocs\soal1
 
